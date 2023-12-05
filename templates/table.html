@@ -1,0 +1,43 @@
+<!-- table.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\static\style_edit.css" />
+    <title>Journal Entries Table</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Journal Entries Table</h1>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Work Done 1</th>
+          <th>Work Done 2</th>
+          <th>Work Done 3</th>
+          <th>Screen Time</th>
+          <th>Push-ups</th>
+          <th>Edit</th>
+        </tr>
+        {% for entry in entries %}
+        <tr>
+          <td>{{ entry[0] }}</td>
+          <td>{{ entry[1] }}</td>
+          <td>{{ entry[2] }}</td>
+          <td>{{ entry[3] }}</td>
+          <td>{{ entry[4] }}</td>
+          <td>{{ entry[5] }}</td>
+          <td>
+            <a href="{{ url_for('edit_entry', entry_date=entry[0]) }}">Edit</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <form action="{{ url_for('index') }}" method="GET">
+        <button type="submit" class="table-button">Back to Home</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+/* Header */
+.header {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px; /* Adjusted padding for better spacing */
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-family: cursive;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Reset Button */
+.reset-button {
+  font-family: monospace;
+  backdrop-filter: blur(15px) saturate(180%);
+  background-color: rgba(244, 67, 54, 0.25);
+  color: white;
+  padding: 12px 18px; /* Adjusted padding for better spacing */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  backdrop-filter: blur(15px) saturate(180%);
+  background-color: rgba(211, 47, 47, 0.25);
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for a subtle lift */
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+td {
+  text-align: left;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Form */
+form {
+  margin-top: 30px; /* Added more margin for better separation */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Adjusted margin for better spacing */
+}
+
+input {
+  width: 50%;
+  padding: 12px;
+  margin-bottom: 20px; /* Adjusted margin for better spacing */
+  box-sizing: border-box;
+  border-radius: 25px; /* Added border-radius for a modern look */
+  box-shadow: 2px 2px 5px rgba(69, 160, 73, 0.25);
+}
+
+/* Button */
+button {
+  font-family: monospace;
+  background-color: rgba(76, 175, 80, 1);
+  color: white;
+  padding: 14px 26px; /* Adjusted padding for better spacing */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Added box-shadow for a subtle lift */
+}
+
+button:hover {
+  background-color: rgba(69, 160, 73, 1);
+}
+
+.table-button {
+  font-family: monospace;
+  background-color: #128516;
+}

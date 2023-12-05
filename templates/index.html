@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\static\style_edit.css" />
+    <title>Daily Journal</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Daily Journal</h1>
+
+        <form action="/reset_initialized" method="POST">
+          <button type="submit" class="reset-button">
+            Reset Initialization
+          </button>
+        </form>
+      </div>
+      {% if not initialized %}
+      <!-- Show the initialization form only if entries are not initialized -->
+      <form action="/initialize_entries" method="POST">
+        <label for="start_date">Last Day of Previous Year:</label>
+        <input type="date" name="start_date" required />
+        <button type="submit">Finalize</button>
+      </form>
+      {% endif %}
+
+      <p>Today's Date: {{ current_date }}</p>
+      <form action="/add_entry" method="POST">
+        <label for="work_done_1">Work Done 1:</label>
+        <input
+          type="text"
+          name="work_done_1"
+          placeholder="Work Done 1"
+          required
+        />
+        <br />
+        <label for="work_done_2">Work Done 2:</label>
+        <input
+          type="text"
+          name="work_done_2"
+          placeholder="Work Done 2"
+          required
+        />
+        <br />
+        <label for="work_done_3">Work Done 3:</label>
+        <input
+          type="text"
+          name="work_done_3"
+          placeholder="Work Done 3"
+          required
+        />
+        <br />
+        <label for="screen_time">Screen Time:</label>
+        <input
+          type="time"
+          name="screen_time"
+          placeholder="Screen Time"
+          required
+        />
+        <br />
+        <label for="pushups">Push-ups:</label>
+        <input type="number" name="pushups" placeholder="Push-ups" required />
+        <br />
+        <button type="submit">Add Entry</button>
+      </form>
+
+      <form action="{{ url_for('table') }}" method="GET">
+        <button type="submit" class="table-button">View Table</button>
+      </form>
+    </div>
+  </body>
+</html>

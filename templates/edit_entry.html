@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\static\style_edit.css" />
+    <title>Edit Entry</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Edit Entry</h1>
+      <form action="/edit_entry/{{ entry_date }}" method="POST">
+        <!-- These are moved for table in the table page -->
+
+        <!-- <div class="edit-section">
+          <div class="readonly-field">
+            <label for="readonly_work_done">Previous Work Done:</label>
+            <input
+              type="text"
+              id="readonly_work_done"
+              value="{{ entry[1] }}"
+              readonly
+            />
+          </div>
+          <div class="readonly-field">
+            <label for="readonly_screen_time">Previous Screen Time:</label>
+            <input
+              type="text"
+              id="readonly_screen_time"
+              value="{{ entry[2] | default('00:00') }}"
+              readonly
+            />
+          </div>
+          <div class="readonly-field">
+            <label for="readonly_pushups">Previous Push-ups:</label>
+            <input
+              type="text"
+              id="readonly_pushups"
+              value="{{ entry[3] }}"
+              readonly
+            />
+          </div>
+        </div> -->
+
+        <div class="edit-section">
+          <label for="work_done_1">New Work Done 1:</label>
+          <input
+            type="text"
+            id="work_done_1"
+            name="work_done_1"
+            placeholder="Work Done"
+            value="{{ entry[1] }}"
+            required
+          />
+        </div>
+        <div class="edit-section">
+          <label for="work_done_2">New Work Done 2:</label>
+          <input
+            type="text"
+            id="work_done_2"
+            name="work_done_2"
+            placeholder="Work Done"
+            value="{{ entry[2] }}"
+            required
+          />
+        </div>
+        <div class="edit-section">
+          <label for="work_done_3">New Work Done 3:</label>
+          <input
+            type="text"
+            id="work_done_3"
+            name="work_done_3"
+            placeholder="Work Done"
+            value="{{ entry[3] }}"
+            required
+          />
+        </div>
+        <div class="edit-section">
+          <label for="screen_time">New Screen Time:</label>
+          <input
+            type="time"
+            id="screen_time"
+            name="screen_time"
+            placeholder="Screen Time"
+            value="{{ entry[4] | default('00:00') }}"
+            required
+          />
+        </div>
+        <div class="edit-section">
+          <label for="pushups">New Push-ups:</label>
+          <input
+            type="number"
+            id="pushups"
+            name="pushups"
+            placeholder="Push-ups"
+            value="{{ entry[5] }}"
+            required
+          />
+        </div>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </body>
+</html>
